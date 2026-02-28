@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViralBond Media · influencer agency</title>
+  <!-- Google Fonts & Font Awesome (icons) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* (styles unchanged – same as previous version) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #1a1e2b;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --primary: #0a2c4b;
+      --primary-light: #1e4a6f;
+      --accent: #2563eb;
+      --accent-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+      --soft-bg: #f8fafc;
+      --card-shadow: 0 20px 30px -10px rgba(0,20,40,0.1), 0 8px 15px rgba(0,0,0,0.03);
+      --hover-shadow: 0 30px 40px -12px rgba(0,40,80,0.25);
+      --border-radius-card: 24px;
+      --border-radius-btn: 40px;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      z-index: 1000;
+      padding: 1rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.7rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.02);
+    }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border-radius: var(--border-radius-btn);
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.25s ease;
+      box-shadow: 0 8px 20px -8px rgba(37,99,235,0.3);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px -8px var(--accent);
+    }
+    .btn-outline {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--accent);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-4px);
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .card {
+      background: white;
+      border-radius: var(--border-radius-card);
+      padding: 2rem 1.5rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s cubic-bezier(0.2,0,0,1);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .card:hover {
+      transform: scale(1.02) translateY(-8px);
+      box-shadow: var(--hover-shadow);
+    }
+    .card i {
+      font-size: 2.5rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+      color: var(--primary);
+    }
+    .about-text {
+      font-size: 1.3rem;
+      max-width: 800px;
+      color: #334155;
+      background: var(--soft-bg);
+      padding: 2rem;
+      border-radius: 40px;
+      box-shadow: inset 0 2px 10px #e2e8f0;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      background: var(--soft-bg);
+      border-radius: 40px;
+      padding: 3rem;
+    }
+    .contact-info {
+      flex: 1 1 250px;
+    }
+    .contact-info i {
+      color: var(--accent);
+      margin-right: 0.8rem;
+      width: 2rem;
+    }
+    .contact-info p {
+      margin: 1.2rem 0;
+      font-size: 1.1rem;
+    }
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+    .contact-form {
+      flex: 2 1 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 50px;
+      border: 1px solid #d1d9e6;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    }
+    textarea.form-input {
+      border-radius: 30px;
+      resize: vertical;
+    }
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 3rem 5% 2rem;
+      border-radius: 48px 48px 0 0;
+      margin-top: 2rem;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-right: 2rem;
+    }
+    .social-icons i {
+      font-size: 1.6rem;
+      margin: 0 0.6rem;
+      color: #94a3b8;
+      transition: 0.2s;
+    }
+    .social-icons a:hover i { color: white; }
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 700px) {
+      .navbar { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+      h2 { font-size: 2rem; }
+      .btn-group { justify-content: center; }
+      .contact-row { padding: 2rem; }
+    }
+    @media (max-width: 450px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="logo">ViralBond Media</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#how">How it works</a>
+      <a href="#brands">Brands</a>
+      <a href="#influencers">Influencers</a>
+      <a href="#why">Why us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" style="padding-top: 4rem;">
+      <div class="container fade-up visible">
+        <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; background: linear-gradient(145deg, #0a2c4b, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Connecting Brands With High-Converting Influencers</h1>
+        <p style="font-size: 1.5rem; color: #334155; margin: 2rem 0 1rem; max-width: 750px;">We pair you with micro-influencers who drive real engagement — no fake followers, only niche audiences.</p>
+        <div class="btn-group">
+          <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" target="_blank">For Brands</a>
+          <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-outline" target="_blank">For Influencers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container fade-up">
+        <h2>About ViralBond</h2>
+        <div class="about-text">
+          We connect brands with niche-based creators — because engagement beats follower count. 
+          Our performance-driven campaigns ensure authentic reach and measurable ROI. 
+          No bots, no vanity metrics.
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (3 steps) -->
+    <section id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="card-grid">
+          <div class="card fade-up">
+            <i class="fas fa-user-edit"></i>
+            <h3>1. Register</h3>
+            <p>Brands & influencers fill a quick form — we learn your niche, goals, and audience.</p>
+          </div>
+          <div class="card fade-up">
+            <i class="fas fa-handshake"></i>
+            <h3>2. Smart Matching</h3>
+            <p>Our algorithm + human touch pair you with the perfect partners based on real affinity.</p>
+          </div>
+          <div class="card fade-up">
+            <i class="fas fa-rocket"></i>
+            <h3>3. Launch Campaign</h3>
+            <p>Approve, post, track performance — we handle the rest.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For Brands Section -->
+    <section id="brands">
+      <div class="container fade-up">
+        <h2>For Brands</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+          <div>
+            <ul style="list-style: none; font-size: 1.2rem; line-height: 2.4;">
+              <li>✅ Access to 3000+ verified micro-influencers</li>
+              <li>✅ Niche‑based targeting (tech, beauty, gaming, etc.)</li>
+              <li>✅ Transparent pricing – you pay only for what works</li>
+              <li>✅ Secure collaboration & contracts</li>
+            </ul>
+            <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" style="margin-top: 2rem;" target="_blank">Start with brand form →</a>
+          </div>
+          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px;">
+            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--accent);"></i>
+            <p style="font-weight: 600; margin-top: 1rem;">“ROI increased 3x within 60 days” – past brand partner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For Influencers Section -->
+    <section id="influencers">
+      <div class="container fade-up">
+        <h2>For Influencers</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+          <div>
+            <ul style="list-style: none; font-size: 1.2rem; line-height: 2.4;">
+              <li>💸 Paid & affiliate campaigns with top brands</li>
+              <li>🎯 Relevant deals – no spam, only your niche</li>
+              <li>🔒 Secure payments, always on time</li>
+              <li>📈 Long‑term growth & portfolio building</li>
+            </ul>
+            <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-primary" style="margin-top: 2rem;" target="_blank">Join as influencer →</a>
+          </div>
+          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px;">
+            <i class="fas fa-star" style="font-size: 3rem; color: var(--accent);"></i>
+            <p style="font-weight: 600; margin-top: 1rem;">“Best platform to earn from what I love” – creator since 2023</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us (4 features) -->
+    <section id="why">
+      <div class="container">
+        <h2>Why choose us</h2>
+        <div class="card-grid">
+          <div class="card fade-up"><i class="fas fa-heart"></i><h3>Real Engagement</h3><p>No bots — we verify audience authenticity.</p></div>
+          <div class="card fade-up"><i class="fas fa-bolt"></i><h3>Fast Setup</h3><p>Campaigns go live in under 48h.</p></div>
+          <div class="card fade-up"><i class="fas fa-percent"></i><h3>Transparent Commission</h3><p>You see exactly where every euro goes.</p></div>
+          <div class="card fade-up"><i class="fas fa-headset"></i><h3>Dedicated Support</h3><p>Human account managers, not chatbots.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container fade-up">
+        <h2>Contact</h2>
+        <div class="contact-row">
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:viralbondmedia@gmail.com">viralbondmedia@gmail.com</a> (we reply within 12h, Mon–Fri)</p>
+            <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank">@viralbondmedia</a></p>
+            <p style="margin-top: 2rem;"><i class="fas fa-clock"></i> response in <strong>12 hours</strong> on business days</p>
+          </div>
+          <form class="contact-form" id="gsheet-form">
+            <input type="text" name="Name" placeholder="Your name" class="form-input" required>
+            <input type="email" name="Email" placeholder="Email address" class="form-input" required>
+            <textarea name="Message" rows="4" placeholder="Tell us about your campaign / collaboration" class="form-input" required></textarea>
+            <button type="submit" class="btn btn-primary" style="width: fit-content;">Send message →</button>
+            <div id="form-status" style="font-size:0.9rem; margin-top:0.5rem;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="logo" style="-webkit-text-fill-color: white; background: none; color: white;">ViralBond Media</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 ViralBond Media. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // Fade-up scroll
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -10px 0px' });
+      fadeElements.forEach(el => observer.observe(el));
+
+      // Google Sheets form submission (using your URL)
+      const form = document.getElementById('gsheet-form');
+      const statusDiv = document.getElementById('form-status');
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzaNfaX03iu3E_6_8WKG8yCvxtgSBwc_A-Ep9xtY0cwBM1WNTVD3VWsbUR_4wSjBOU/exec';
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = form.querySelector('input[name="Name"]').value.trim();
+          const email = form.querySelector('input[name="Email"]').value.trim();
+          const message = form.querySelector('textarea[name="Message"]').value.trim();
+          if (!name || !email || !message) {
+            statusDiv.style.color = 'red';
+            statusDiv.innerText = '❌ All fields are required.';
+            return;
+          }
+          if (!email.includes('@') || !email.includes('.')) {
+            statusDiv.style.color = 'red';
+            statusDiv.innerText = '❌ Enter a valid email address.';
+            return;
+          }
+
+          statusDiv.style.color = 'var(--accent)';
+          statusDiv.innerText = 'Sending...';
+
+          const formData = new FormData(form);
+          const urlEncoded = new URLSearchParams(formData).toString();
+
+          fetch(scriptURL, {
+            method: 'POST',
+            body: urlEncoded,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          })
+          .then(response => {
+            if (response.ok) {
+              statusDiv.style.color = 'green';
+              statusDiv.innerText = '✅ Message sent! We’ll reply within 12h.';
+              form.reset();
+            } else {
+              response.text().then(text => {
+                console.error('Server response:', text);
+                statusDiv.style.color = 'red';
+                statusDiv.innerText = '⚠️ Server error. Check Apps Script.';
+              });
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            statusDiv.style.color = 'red';
+            statusDiv.innerText = '⚠️ Submission failed. Check connection.';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
