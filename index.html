@@ -2,13 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ViralBond Media · influencer agency</title>
-  <!-- Google Fonts & Font Awesome (icons) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- SEO Meta Tags -->
+  <title>ViralBond Media | Influencer Marketing Agency India – Connect with Micro-Influencers</title>
+  <meta name="description" content="ViralBond Media connects brands with high-converting micro-influencers in India. Performance-driven campaigns, niche targeting, and real engagement. Join now!">
+  <meta name="keywords" content="influencer marketing agency India, micro-influencers, brand collaboration, influencer campaign, viralbond media, niche influencers, performance marketing">
+  <meta name="author" content="ViralBond Media">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.viralbondmedia.com/">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="ViralBond Media – Connect with High-Converting Influencers">
+  <meta property="og:description" content="We connect brands with niche creators for authentic engagement. Performance-driven campaigns that deliver real ROI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.viralbondmedia.com/">
+  <meta property="og:image" content="https://www.viralbondmedia.com/og-image.jpg">
+  <meta property="og:site_name" content="ViralBond Media">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ViralBond Media – Influencer Marketing Agency">
+  <meta name="twitter:description" content="We connect brands with niche creators for authentic engagement. Performance-driven campaigns that deliver real ROI.">
+  <meta name="twitter:image" content="https://www.viralbondmedia.com/og-image.jpg">
+  
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232563eb'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3EV%3C/text%3E%3C/svg%3E">
+  
+  <!-- Google Fonts + Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1XVRDKMWJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J1XVRDKMWJ');
+  </script>
+  
   <style>
-    /* (styles unchanged – same as previous version) */
+    /* ---------- RESET & GLOBAL ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +63,6 @@
     }
     :root {
       --primary: #0a2c4b;
-      --primary-light: #1e4a6f;
       --accent: #2563eb;
       --accent-gradient: linear-gradient(135deg, #2563eb, #1e40af);
       --soft-bg: #f8fafc;
@@ -32,12 +71,19 @@
       --border-radius-card: 24px;
       --border-radius-btn: 40px;
     }
+    /* ---------- UTILITIES ---------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+    /* ---------- STICKY NAVBAR ---------- */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
       z-index: 1000;
       padding: 1rem 5%;
@@ -50,6 +96,7 @@
       font-weight: 700;
       font-size: 1.7rem;
       background: var(--accent-gradient);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
@@ -63,14 +110,13 @@
       text-decoration: none;
       color: #1e293b;
       font-size: 1rem;
-      transition: color 0.2s;
+      transition: color 0.2s, transform 0.2s;
     }
-    .nav-links a:hover { color: var(--accent); }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5%;
+    .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
     }
+    /* ---------- SECTIONS ---------- */
     section {
       padding: 5rem 0;
       border-bottom: 1px solid rgba(0,0,0,0.02);
@@ -80,10 +126,12 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: var(--accent-gradient);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.02em;
     }
+    /* ---------- BUTTONS ---------- */
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -96,11 +144,12 @@
       border-radius: var(--border-radius-btn);
       font-weight: 600;
       text-decoration: none;
-      transition: 0.25s ease;
+      transition: all 0.25s ease;
       box-shadow: 0 8px 20px -8px rgba(37,99,235,0.3);
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      text-align: center;
     }
     .btn-primary {
       background: var(--accent-gradient);
@@ -121,6 +170,7 @@
       color: white;
       transform: translateY(-4px);
     }
+    /* ---------- CARDS ---------- */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -142,6 +192,7 @@
     .card i {
       font-size: 2.5rem;
       background: var(--accent-gradient);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
@@ -151,6 +202,7 @@
       margin-bottom: 0.7rem;
       color: var(--primary);
     }
+    /* ---------- ABOUT ---------- */
     .about-text {
       font-size: 1.3rem;
       max-width: 800px;
@@ -160,6 +212,7 @@
       border-radius: 40px;
       box-shadow: inset 0 2px 10px #e2e8f0;
     }
+    /* ---------- CONTACT SECTION ---------- */
     .contact-row {
       display: flex;
       flex-wrap: wrap;
@@ -209,6 +262,7 @@
       border-radius: 30px;
       resize: vertical;
     }
+    /* ---------- FOOTER ---------- */
     .footer {
       background: #0f172a;
       color: #cbd5e1;
@@ -227,7 +281,9 @@
       color: #cbd5e1;
       text-decoration: none;
       margin-right: 2rem;
+      transition: color 0.2s;
     }
+    .footer-links a:hover { color: white; }
     .social-icons i {
       font-size: 1.6rem;
       margin: 0 0.6rem;
@@ -241,6 +297,7 @@
       font-size: 0.9rem;
       opacity: 0.7;
     }
+    /* ---------- ANIMATIONS ---------- */
     .fade-up {
       opacity: 0;
       transform: translateY(24px);
@@ -250,6 +307,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 700px) {
       .navbar { flex-direction: column; gap: 0.8rem; }
       .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
@@ -264,7 +322,7 @@
 </head>
 <body>
   <!-- Sticky Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="logo">ViralBond Media</div>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -278,13 +336,13 @@
 
   <main>
     <!-- Hero Section -->
-    <section id="hero" style="padding-top: 4rem;">
+    <section id="hero">
       <div class="container fade-up visible">
-        <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; background: linear-gradient(145deg, #0a2c4b, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Connecting Brands With High-Converting Influencers</h1>
+        <h1>Connecting Brands With High-Converting Influencers</h1>
         <p style="font-size: 1.5rem; color: #334155; margin: 2rem 0 1rem; max-width: 750px;">We pair you with micro-influencers who drive real engagement — no fake followers, only niche audiences.</p>
         <div class="btn-group">
-          <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" target="_blank">For Brands</a>
-          <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-outline" target="_blank">For Influencers</a>
+          <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" target="_blank" rel="noopener noreferrer">For Brands</a>
+          <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-outline" target="_blank" rel="noopener noreferrer">For Influencers</a>
         </div>
       </div>
     </section>
@@ -307,17 +365,17 @@
         <h2>How it works</h2>
         <div class="card-grid">
           <div class="card fade-up">
-            <i class="fas fa-user-edit"></i>
+            <i class="fas fa-user-edit" aria-hidden="true"></i>
             <h3>1. Register</h3>
             <p>Brands & influencers fill a quick form — we learn your niche, goals, and audience.</p>
           </div>
           <div class="card fade-up">
-            <i class="fas fa-handshake"></i>
+            <i class="fas fa-handshake" aria-hidden="true"></i>
             <h3>2. Smart Matching</h3>
             <p>Our algorithm + human touch pair you with the perfect partners based on real affinity.</p>
           </div>
           <div class="card fade-up">
-            <i class="fas fa-rocket"></i>
+            <i class="fas fa-rocket" aria-hidden="true"></i>
             <h3>3. Launch Campaign</h3>
             <p>Approve, post, track performance — we handle the rest.</p>
           </div>
@@ -329,7 +387,7 @@
     <section id="brands">
       <div class="container fade-up">
         <h2>For Brands</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
           <div>
             <ul style="list-style: none; font-size: 1.2rem; line-height: 2.4;">
               <li>✅ Access to 3000+ verified micro-influencers</li>
@@ -337,10 +395,10 @@
               <li>✅ Transparent pricing – you pay only for what works</li>
               <li>✅ Secure collaboration & contracts</li>
             </ul>
-            <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" style="margin-top: 2rem;" target="_blank">Start with brand form →</a>
+            <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" style="margin-top: 2rem;" target="_blank" rel="noopener noreferrer">Start with brand form →</a>
           </div>
-          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px;">
-            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--accent);"></i>
+          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px; text-align: center;">
+            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--accent);" aria-hidden="true"></i>
             <p style="font-weight: 600; margin-top: 1rem;">“ROI increased 3x within 60 days” – past brand partner</p>
           </div>
         </div>
@@ -351,7 +409,7 @@
     <section id="influencers">
       <div class="container fade-up">
         <h2>For Influencers</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
           <div>
             <ul style="list-style: none; font-size: 1.2rem; line-height: 2.4;">
               <li>💸 Paid & affiliate campaigns with top brands</li>
@@ -359,10 +417,10 @@
               <li>🔒 Secure payments, always on time</li>
               <li>📈 Long‑term growth & portfolio building</li>
             </ul>
-            <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-primary" style="margin-top: 2rem;" target="_blank">Join as influencer →</a>
+            <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-primary" style="margin-top: 2rem;" target="_blank" rel="noopener noreferrer">Join as influencer →</a>
           </div>
-          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px;">
-            <i class="fas fa-star" style="font-size: 3rem; color: var(--accent);"></i>
+          <div style="background: var(--soft-bg); padding: 2rem; border-radius: 40px; text-align: center;">
+            <i class="fas fa-star" style="font-size: 3rem; color: var(--accent);" aria-hidden="true"></i>
             <p style="font-weight: 600; margin-top: 1rem;">“Best platform to earn from what I love” – creator since 2023</p>
           </div>
         </div>
@@ -374,10 +432,10 @@
       <div class="container">
         <h2>Why choose us</h2>
         <div class="card-grid">
-          <div class="card fade-up"><i class="fas fa-heart"></i><h3>Real Engagement</h3><p>No bots — we verify audience authenticity.</p></div>
-          <div class="card fade-up"><i class="fas fa-bolt"></i><h3>Fast Setup</h3><p>Campaigns go live in under 48h.</p></div>
-          <div class="card fade-up"><i class="fas fa-percent"></i><h3>Transparent Commission</h3><p>You see exactly where every euro goes.</p></div>
-          <div class="card fade-up"><i class="fas fa-headset"></i><h3>Dedicated Support</h3><p>Human account managers, not chatbots.</p></div>
+          <div class="card fade-up"><i class="fas fa-heart" aria-hidden="true"></i><h3>Real Engagement</h3><p>No bots — we verify audience authenticity.</p></div>
+          <div class="card fade-up"><i class="fas fa-bolt" aria-hidden="true"></i><h3>Fast Setup</h3><p>Campaigns go live in under 48h.</p></div>
+          <div class="card fade-up"><i class="fas fa-percent" aria-hidden="true"></i><h3>Transparent Commission</h3><p>You see exactly where every euro goes.</p></div>
+          <div class="card fade-up"><i class="fas fa-headset" aria-hidden="true"></i><h3>Dedicated Support</h3><p>Human account managers, not chatbots.</p></div>
         </div>
       </div>
     </section>
@@ -388,16 +446,16 @@
         <h2>Contact</h2>
         <div class="contact-row">
           <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> <a href="mailto:viralbondmedia@gmail.com">viralbondmedia@gmail.com</a> (we reply within 12h, Mon–Fri)</p>
-            <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank">@viralbondmedia</a></p>
-            <p style="margin-top: 2rem;"><i class="fas fa-clock"></i> response in <strong>12 hours</strong> on business days</p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:viralbondmedia@gmail.com">viralbondmedia@gmail.com</a> (we reply within 12h, Mon–Fri)</p>
+            <p><i class="fab fa-instagram" aria-hidden="true"></i> <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank" rel="noopener noreferrer">@viralbondmedia</a></p>
+            <p style="margin-top: 2rem;"><i class="fas fa-clock" aria-hidden="true"></i> response in <strong>12 hours</strong> on business days</p>
           </div>
           <form class="contact-form" id="gsheet-form">
-            <input type="text" name="Name" placeholder="Your name" class="form-input" required>
-            <input type="email" name="Email" placeholder="Email address" class="form-input" required>
-            <textarea name="Message" rows="4" placeholder="Tell us about your campaign / collaboration" class="form-input" required></textarea>
+            <input type="text" name="Name" placeholder="Your name" class="form-input" required aria-label="Your name">
+            <input type="email" name="Email" placeholder="Email address" class="form-input" required aria-label="Email address">
+            <textarea name="Message" rows="4" placeholder="Tell us about your campaign / collaboration" class="form-input" required aria-label="Message"></textarea>
             <button type="submit" class="btn btn-primary" style="width: fit-content;">Send message →</button>
-            <div id="form-status" style="font-size:0.9rem; margin-top:0.5rem;"></div>
+            <div id="form-status" style="font-size:0.9rem; margin-top:0.5rem;" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -408,35 +466,36 @@
     <div class="footer-grid">
       <div class="logo" style="-webkit-text-fill-color: white; background: none; color: white;">ViralBond Media</div>
       <div class="footer-links">
-        <a href="https://viralbond-privacy-9191.netlify.app/">Privacy Policy</a>
-        <a href="https://termsandconditions-viralbond.netlify.app/">Terms & Conditions</a>
-        <a href="#contact">Contact</a>
+        <a href="https://viralbond-privacy-9191.netlify.app/" aria-label="Privacy Policy">Privacy Policy</a>
+        <a href="https://termsandconditions-viralbond.netlify.app/" aria-label="Terms and Conditions">Terms & Conditions</a>
+        <a href="#contact" aria-label="Contact">Contact</a>
       </div>
       <div class="social-icons">
-        <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
     <div class="copyright">
-      © 2025 ViralBond Media. All rights reserved.
+      © 2026 ViralBond Media. All rights reserved.
     </div>
   </footer>
 
   <script>
     (function() {
-      // Fade-up scroll
+      // Fade-up scroll animation
       const fadeElements = document.querySelectorAll('.fade-up');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once visible
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -10px 0px' });
       fadeElements.forEach(el => observer.observe(el));
 
-      // Google Sheets form submission (using your URL)
+      // Google Sheets form submission
       const form = document.getElementById('gsheet-form');
       const statusDiv = document.getElementById('form-status');
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzaNfaX03iu3E_6_8WKG8yCvxtgSBwc_A-Ep9xtY0cwBM1WNTVD3VWsbUR_4wSjBOU/exec';
@@ -479,19 +538,18 @@
               response.text().then(text => {
                 console.error('Server response:', text);
                 statusDiv.style.color = 'red';
-                statusDiv.innerText = '⚠️ Server error. Check Apps Script.';
+                statusDiv.innerText = '⚠️ Server error. Please try again later.';
               });
             }
           })
           .catch(error => {
             console.error(error);
             statusDiv.style.color = 'red';
-            statusDiv.innerText = '⚠️ Submission failed. Check connection.';
+            statusDiv.innerText = '⚠️ Submission failed. Check your connection.';
           });
         });
       }
     })();
   </script>
 </body>
-
 </html>
