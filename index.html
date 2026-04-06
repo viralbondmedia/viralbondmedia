@@ -213,6 +213,99 @@
       border-radius: 40px;
       box-shadow: inset 0 2px 10px #e2e8f0;
     }
+    /* ---------- FEATURED CREATORS SECTION ---------- */
+    .creators-scroll-wrapper {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      margin: 2rem 0 1rem;
+    }
+    .creators-scroll-content {
+      display: flex;
+      gap: 2rem;
+      animation: scrollLeft 26s linear infinite;
+      width: max-content;
+    }
+    /* pause on hover */
+    .creators-scroll-wrapper:hover .creators-scroll-content {
+      animation-play-state: paused;
+    }
+    /* influencer card styling - now with square images */
+    .creator-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      width: 220px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.03);
+      flex-shrink: 0;
+    }
+    .creator-card:hover {
+      transform: scale(1.05) translateY(-8px);
+      box-shadow: var(--hover-shadow);
+    }
+    .creator-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft-bg);
+      /* Square shape - no border radius */
+      border-radius: 0;
+    }
+    .creator-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .creator-username {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .creator-followers {
+      font-size: 0.9rem;
+      color: #5b6e8c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .creator-followers i {
+      font-size: 0.9rem;
+      color: var(--accent);
+      background: none;
+      -webkit-text-fill-color: var(--accent);
+    }
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    /* responsive adjustments */
+    @media (max-width: 700px) {
+      .creator-card {
+        width: 180px;
+        padding: 1rem;
+      }
+      .creator-avatar {
+        width: 80px;
+        height: 80px;
+      }
+      .creator-username {
+        font-size: 1rem;
+      }
+    }
     /* ---------- CONTACT SECTION ---------- */
     .contact-row {
       display: flex;
@@ -326,7 +419,8 @@
   <nav class="navbar" aria-label="Main navigation">
     <div class="logo">ViralBond Media</div>
     <div class="nav-links">
-      <a href="https://viralbondmedia.netlify.app/">Home</a>
+        <a href="https://viralbondmedia.netlify.app/">Home</a>
+        <a href="https://rohitchoudharyportfolio.netlify.app/">Portfolio</a>
       <a href="#about">About</a>
       <a href="#how">How it works</a>
       <a href="#brands">Brands</a>
@@ -345,6 +439,145 @@
         <div class="btn-group">
           <a href="https://forms.gle/Fx4CKho7aawjsmk4A" class="btn btn-primary" target="_blank" rel="noopener noreferrer">For Brands</a>
           <a href="https://forms.gle/9hGo69cqwrNAS5QKA" class="btn btn-outline" target="_blank" rel="noopener noreferrer">For Influencers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Creators Section (HTML only, square images, faster loading) -->
+    <section id="featured-creators">
+      <div class="container">
+        <h2>✨ Featured Creators</h2>
+        <div class="creators-scroll-wrapper">
+          <div class="creators-scroll-content">
+            <!-- First set of 10 cards - eager loading for faster initial display -->
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/GvhsFZnZ/Rohit-Shaw.jpg" alt="Rohit-Shaw" border="0" alt="@unique_rohit14" width="100" height="100" loading="eager" fetchpriority="high">
+              </div>
+              <div class="creator-username">@unique_rohit14</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 920K followers</div>
+            </div>
+            <div class="creator-card">
+                 <div class="creator-avatar">
+                <img src="https://i.ibb.co/nNMKSnZx/Kartik-Kumar-378-K-3.jpg" alt="Kartik-Kumar-378-K-3" border="0" alt="@Kartikkk_kumarrr" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@Kartikkk_kumarrr</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 378K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/R4SHG8zv/photo-2026-04-03-08-16-28.jpg" alt="photo-2026-04-03-08-16-28" alt="@_.techhnique.10__" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@_.techhnique.10__</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 370K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/bgfCxg0n/photo-2026-04-03-08-20-40.jpg" alt="photo-2026-04-03-08-20-40" alt="@Captainxreel" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@Captainxreel</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 338K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/yF2B16TV/photo-2026-04-03-08-22-42.jpg" alt="photo-2026-04-03-08-22-42" alt="@madte.ch" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@madte.ch</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 338K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/mFhnPh6Y/photo-2026-04-03-08-24-48.jpg" alt="photo-2026-04-03-08-24-48" alt="@robiul_tech0.2" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@robiul_tech0.2</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 272K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/Nnnx8xcj/photo-2026-04-03-08-26-51.jpg" alt="photo-2026-04-03-08-26-51" alt="@manda_xpert" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@manda_xpert</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 253K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/FbVYmxJ8/photo-2026-04-03-08-28-36.jpg" alt="photo-2026-04-03-08-28-36" alt="@tutu__editz02" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@tutu__editz02 </div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 250K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/DPCNF8yd/Shail-250k-10.jpg" alt="Shail-250k-10" alt="@thesahilfam" width="100" height="100" loading="eager">
+              </div>
+              <div class="creator-username">@thesahilfam</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 250K followers</div>
+            </div>
+            <!-- Duplicate set for seamless infinite scroll - lazy loading for these -->
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/GvhsFZnZ/Rohit-Shaw.jpg" alt="@unique_rohit14" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@unique_rohit14</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 920K followers</div>
+            </div>
+             <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/nNMKSnZx/Kartik-Kumar-378-K-3.jpg" alt="@Kartikkk_kumarrr" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@Kartikkk_kumarrr</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 378K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/R4SHG8zv/photo-2026-04-03-08-16-28.jpg" alt="@_.techhnique.10__" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@_.techhnique.10__ </div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 370K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/bgfCxg0n/photo-2026-04-03-08-20-40.jpg" alt="@Captainxreel" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@Captainxreel</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 338K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/yF2B16TV/photo-2026-04-03-08-22-42.jpg" alt="@madte.ch" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@madte.ch </div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 338K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/mFhnPh6Y/photo-2026-04-03-08-24-48.jpg" alt="@robiul_tech0.2" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@robiul_tech0.2 </div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 272K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/Nnnx8xcj/photo-2026-04-03-08-26-51.jpg" alt="@manda_xpert" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@manda_xpert</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 253K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/FbVYmxJ8/photo-2026-04-03-08-28-36.jpg" alt="tutu__editz02" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@tutu__editz02</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 250K followers</div>
+            </div>
+            <div class="creator-card">
+              <div class="creator-avatar">
+                <img src="https://i.ibb.co/DPCNF8yd/Shail-250k-10.jpg" alt="@thesahilfam" width="100" height="100" loading="lazy">
+              </div>
+              <div class="creator-username">@thesahilfam</div>
+              <div class="creator-followers"><i class="fas fa-user-friends"></i> 134K followers</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -474,7 +707,7 @@
       </div>
       <div class="social-icons">
         <a href="https://www.instagram.com/viralbondmedia?utm_source=qr&igsh=MXRpdjB2MG05OGV4Mw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/rohti-choudhary-6107053ba/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
@@ -491,7 +724,7 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Stop observing once visible
+            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -10px 0px' });
